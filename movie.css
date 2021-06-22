@@ -1,0 +1,11 @@
+body{
+    background-image: linear-gradient(to right, #112b2e , #10100f);
+    color: white;
+  }
+div{
+    display: block;
+}
+span{
+    font-weight: bold;
+    font-size:20px;
+}

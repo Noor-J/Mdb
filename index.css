@@ -1,0 +1,222 @@
+/*body{
+    background-image: linear-gradient(to top, #185d66 , #10100f);
+    color: white;
+  }*/
+
+body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+  }
+}
+
+  .in-section{
+    width: 80%;
+    margin: 8% auto;
+    padding: 20px;
+    box-shadow: 5px 7px 7px 0px #000000;
+    border-radius: 20px;
+  }
+  input{
+    width: 100%;
+    border-radius: 10px;
+    border: 0px black;
+    height: 30px;
+  }
+  input:hover{
+    border-radius: 10px;
+    border: 0px;
+  }
+  label{
+    display: block;
+    font-family: sans-serif;
+  }
+  .label{
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #ffffff; 
+  }
+
+/* 
+  .linkHeading{
+    border: 1px #2196f338 solid;
+    box-shadow: 7px 8px 20px #00bcd46b;
+    padding: 6px;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 25px;
+    font-family: sans-serif;
+  }
+  .linkHeading:hover{
+    background-color: #bbbbbb52;
+  } */
+  #MovieList{
+    margin: 0px 10%;
+    padding: 10px;
+    box-shadow: 3px 9px 9px black;
+    color:rgb(255, 255, 255);
+    font-weight: bold;
+    font-family: sans-serif;
+  }
+  .movieName{
+    color: #ffffff;
+    text-decoration: none;
+    text-align-last: left;
+    font-weight: bold;
+    margin: 10px;
+    display: block;
+  }
+
+  a{
+    color:white;
+  }
+
+  .inApp input{
+    width: auto;
+  }
+
+  .category{
+    font-weight: bold;
+    font-size:20px;
+}
+.column{
+    width: auto;
+    display: inline-block;
+    padding:5px;
+}
+.details{
+    line-height: 40px;
+    width: 65% !important;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10rem;
+  color: #fff;
+  font-size: 25px;
+  font-family: sans-serif;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  text-decoration: none;
+  border: 1px #2196f338 solid;
+  box-shadow: 7px 8px 120px #e73c7e;
+}
+.button:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00bcd46b;
+  border-radius: 10rem;
+  z-index: -2;
+}
+.button:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #0d3944;
+  transition: all 0.3s;
+  border-radius: 10rem;
+  z-index: -1;
+}
+.button:hover {
+  color: #fff;
+}
+.button:hover:before {
+  width: 100%;
+}
+
+
+a{
+    color:white;
+}
+.b{
+  width: 80px;
+  height: 30px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+.b1{
+  width: 650px;
+  height: 35px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+.b2{
+  margin-right: 10px;
+  width: 165px;
+  height: 30;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px
+}
+.follow-button {
+  color: #ffffff;
+  font-family: "Helvetica";
+  font-size: 10pt;
+  background-color: #000000;
+  border: 1px solid;
+  border-color: #3399FF;
+  margin-right: 10px;
+  width: 120px;
+  height: 20;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 5px	    
+}
+
+td input{
+  width: 300px !important;
+}
+
+.watchListButton{
+    font-size: 15px;
+    color: black;
+}
+
+#removeWatchedMovie{
+  margin-left: 5px;
+  background-color: #ed4343;
+}
