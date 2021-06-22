@@ -573,7 +573,7 @@ app.get('/users', function (request, response,error) {
 
 
 // Initialize database connection
-MongoClient.connect("mongodb+srv://new-user:<password>@cluster0.n2uo2.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", function(err, client) {
+MongoClient.connect("mongodb+srv://new-user:qwertyuiop@cluster0.n2uo2.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", function(err, client) {
   if(err) throw err;
 
   //Get the t8 database
