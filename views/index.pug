@@ -1,0 +1,23 @@
+html
+	head
+		title Movie Database
+	
+	body
+		if loggedin
+			button#logout(class="button" style="float:right;") Logout
+		a(class="button" href="/") Home
+		a(class="button" href="/advancedSearch") Advanced Search
+		if loggedin
+			a(class="button" href="/profile") #{"Hi "+username}
+		else 
+			a(class="button" href="/loginOrSignup") Login/Signup
+		a(class="button" href="/contribute") Contribute
+		if loggedin
+			a(class="button" href="/users") View Users
+
+		form(class="in-section")
+			label(class="label" for="name") Enter Movie Name Below
+			input#searchMovie(type="text" name="name")
+		div#MovieList
+	script(src="/client.js")
+	link(href="/index.css" rel="stylesheet" )

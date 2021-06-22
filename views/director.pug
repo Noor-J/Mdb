@@ -1,0 +1,28 @@
+html
+    head
+        title View movies by Director
+    body
+        if loggedin
+            button#logout(class="button" style="float:right;") Logout
+        h1(align="right") 
+        a(class="button" href="/") Home
+        a(class="button" href="/advancedSearch") Advanced Search
+        if loggedin
+            a(class="button" href="/profile") #{"Hi "+username}
+        else 
+            a(class="button" href="/loginOrSignup") Login/Signup
+        a(class="button" href="/contribute") Contribute
+        if loggedin
+            a(class="button" href="/users") View Users
+        br
+        br
+        br
+        h2(class="label") Movies by #{directorName+":"}
+        if loggedin
+            button#followUnfollowPeople(class="followUnfollowPeople follow-button" value=followedPeople[directorName] name=directorName) #{followedPeople[directorName]?"Unfollow":"Follow"}
+        div#main
+            div(class="column details") 
+                each val in data
+                        a(class="movieName" href="/movie/"+val.Title) #{val.Title+" "+val.Year}
+    link(href="/index.css" rel="stylesheet" )
+    script(src="/client.js")

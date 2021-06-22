@@ -1,0 +1,69 @@
+html
+    head
+        title Profile
+    body
+        if loggedin
+            button#logout(class="button" style="float:right;") Logout
+        h1(align="right") 
+        a(class="button" href="/") Home
+        a(class="button" href="/advancedSearch") Advanced Search
+        if loggedin
+            a(class="button" href="/profile") #{"Hi "+username}
+        else 
+            a(class="button" href="/loginOrSignup") Login/Signup
+        a(class="button" href="/contribute") Contribute
+        if loggedin
+            a(class="button" href="/users") View Users
+        br
+        br
+        br
+        h2(style="display:inline;" class="label" ) #{otherUserProfile}
+        if otherUserProfile && loggedin 
+            button#followUnfollowUser(class="follow-button" value=followedUser name=otherUserProfile) #{followedUser?"Unfollow":"Follow"}
+        br
+        br
+        div 
+            h2(class="label") Reviews added by user:
+            each review in reviews
+                div
+                    a(class="label" href='/review/'+ review._id) #{review.movieName +"    -    " + review.reviewScore+"/10     -    " +review.reviewSummary}
+            br 
+            br 
+            br
+            h2(class="label") Movies Watched by user:
+            each movie in watchList  
+                div
+                    a(class="label" href='/movie/'+ movie.movieName) #{movie.movieName}
+                    if !otherUserProfile
+                        button(class="removeWatchedMovie" name=movie.movieId ) x
+            br 
+            br 
+            br
+            h2(class="label") Users followed:
+            each user in followedUsers  
+                div
+                    if !otherUserProfile
+                        button#followUnfollowUser(class="removeFollowedUser follow-button" name=user value=true) Unfollow
+                    a(class="label" href='/user/'+ user) #{user}
+            br 
+            br 
+            br
+            if !otherUserProfile && loggedin
+                h2(class="label") Notifications:
+                each notification in notifications  
+                    div
+                        p(class="label") #{notification}
+                br 
+                br 
+                br
+                h2(class="label") People you follow:
+                each user in followedPeople  
+                    div
+                        if !otherUserProfile
+                            button#followUnfollowPeople(class="followUnfollowPeople follow-button" name=user.name value=true) Unfollow
+                        a(class="label" href='/'+user.type+'/'+ user.name) #{user.name}
+            br 
+            br 
+            br
+    link(href="/index.css" rel="stylesheet" )
+    script(src="/client.js")

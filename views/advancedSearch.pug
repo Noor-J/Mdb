@@ -1,0 +1,39 @@
+html
+    head
+        title Advanced Search
+    body(class="inApp")
+        
+        if loggedin
+            button#logout(class="button" style="float:right;") Logout
+        a(class="button" href="/") Home
+        a(class="button" href="/advancedSearch") Advanced Search
+        if loggedin
+            a(class="button" href="/profile") #{"Hi "+username}
+        else 
+            a(class="button" href="/loginOrSignup") Login/Signup
+        a(class="button" href="/contribute") Contribute
+        if loggedin
+            a(class="button" href="/users") View Users
+
+        br
+        br
+        h2(class="label") Search Movie
+
+        p(class="label") Enter data into the filter form below and hit Search to find matching movies.
+
+        p(class="label") Title:
+        input#Title(type="text" required)
+        p(class="label") Artist:
+        input#Artist(type="text" required)
+        p(class="label") Genre:
+        input#Genre(type="text" required)
+        br
+        br
+        button#searchButton(class="b" type="button") Search
+        br
+
+        h2(class="label") Results:
+        div#results
+
+    script(src="/client.js")
+    link(href="/index.css" rel="stylesheet" )

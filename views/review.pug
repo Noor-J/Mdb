@@ -1,0 +1,31 @@
+html
+    head
+        title= reviewSummary
+    body
+        if loggedin
+            button#logout(class="button" style="float:right;") Logout
+        h1(align="right") 
+        a(class="button" href="/") Home
+        a(class="button" href="/advancedSearch") Advanced Search
+        if loggedin
+            a(class="button" href="/profile") #{"Hi "+usernameToShow}
+        else 
+            a(class="button" href="/loginOrSignup") Login/Signup
+        a(class="button" href="/contribute") Contribute
+        if loggedin
+            a(class="button" href="/users") View Users
+        br
+        br
+        br
+        h2(class="label") Review Details 
+        br
+        br
+        p(class="label") Movie: 
+            a(href="/movie/"+movieName) #{movieName}
+        p(class="label") Review Summary: #{reviewSummary}
+        p(class="label") Review By:
+            a(href='/user/'+ username) #{username}
+        p(class="label") Review Score: #{reviewScore}
+        p(class="label") Full Review: #{fullReviewText}
+    link(href="/index.css" rel="stylesheet" )
+    script(src="/client.js")

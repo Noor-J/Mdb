@@ -1,0 +1,27 @@
+html
+    head
+        title Login/Signup
+    body(class="inApp")
+        if loggedin
+            button#logout(class="button" style="float:right;") Logout
+        a(class="button" href="/") Home
+        a(class="button" href="/advancedSearch") Advanced Search
+        if loggedin
+            a(class="button" href="/profile") #{"Hi "+username}
+        else 
+            a(class="button" href="/loginOrSignup") Login/Signup
+        a(class="button" href="/contribute") Contribute
+        if loggedin
+            a(class="button" href="/users") View Users
+        br
+        br
+        h2(class="label") Login/Signup
+        br
+        p(class="label") Username:
+            input#username(type="text")
+        p(class="label") Password:
+            input#password(type="password")
+        button#login(class="b" type="button") Login
+        button#signup(class="b" type="button") Signup
+    script(src="/client.js")
+    link(href="/index.css" rel="stylesheet" )

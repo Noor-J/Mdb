@@ -1,0 +1,34 @@
+html
+    head
+        title Profile
+    body
+        if loggedin
+            button#logout(class="button" style="float:right;") Logout
+        h1(align="right") 
+        a(class="button" href="/") Home
+        a(class="button" href="/advancedSearch") Advanced Search
+        if loggedin
+            a(class="button" href="/profile") #{"Hi "+username}
+        else 
+            a(class="button" href="/loginOrSignup") Login/Signup
+        a(class="button" href="/contribute") Contribute
+        if loggedin
+            a(class="button" href="/users") View Users
+        br
+        br
+        br
+        h2(style="display:inline;" class="label") Users
+        br
+        br
+        div 
+            each user in users  
+                div
+                    if user.username!=username  
+                        if loggedin 
+                            button#removeFollowedUser(class="removeFollowedUser follow-button" value=followedUsers[user.username]?true:false name=user.username) #{followedUsers[user.username]?"Unfollow":"Follow"}
+                        a(class="label" href='/user/'+ user.username) #{user.username}
+            br 
+            br 
+            br
+    link(href="/index.css" rel="stylesheet" )
+    script(src="/client.js")

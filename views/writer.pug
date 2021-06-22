@@ -1,0 +1,29 @@
+html
+    head
+        title View movies by Writer
+    body
+        h2#writerName
+        if loggedin
+            button#logout(class="button" style="float:right;") Logout
+        h1(align="right") 
+        a(class="button" href="/") Home
+        a(class="button" href="/advancedSearch") Advanced Search
+        if loggedin
+            a(class="button" href="/profile") #{"Hi "+username}
+        else 
+            a(class="button" href="/loginOrSignup") Login/Signup
+        a(class="button" href="/contribute") Contribute
+        if loggedin
+            a(class="button" href="/users") View Users
+        br
+        br
+        br
+        h2(class="label") Movies by #{writerName+":"}
+        if loggedin
+            button#followUnfollowPeople(class="followUnfollowPeople follow-button" value=followedPeople[writerName] name=writerName) #{followedPeople[writerName]?"Unfollow":"Follow"}
+        div#main
+            div(class="column details") 
+                each val in data
+                        a(class="movieName" href="/movie/"+val.Title) #{val.Title+" "+val.Year}
+    link(href="/index.css" rel="stylesheet" )
+    script(src="/client.js")

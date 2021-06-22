@@ -1,0 +1,84 @@
+html
+    head
+        title Contribute
+    body(class="inApp")
+        if loggedin
+            button#logout(class="button" style="float:right;") Logout
+        a(class="button" href="/") Home
+        a(class="button" href="/advancedSearch") Advanced Search
+        if loggedin
+            a(class="button" href="/profile") #{"Hi "+username}
+        else 
+            a(class="button" href="/loginOrSignup") Login/Signup
+        a(class="button" href="/contribute") Contribute
+        if loggedin
+            a(class="button" href="/users") View Users
+
+        br
+        h2(class="label") Add a movie
+        br
+        table
+            tr 
+                td
+                    p(class="label") Title:
+                td
+                    input#Title(type="text")
+            tr
+                td
+                    p(class="label") Runtime:
+                td
+                    input#Runtime(type="text")
+            tr
+                td
+                    p(class="label") Release Year:
+                td
+                    input#Year(type="text")
+            tr
+                td
+                    p(class="label") Genre(Enter Genres separated by comma):
+                td
+                    input#Genre(type="text")
+            tr
+                td
+                    p(class="label") Actors(Enter Actors separated by comma):
+                td
+                    input#Actors(type="text")
+            tr
+                td
+                    p(class="label") Directors(Enter Directors separated by comma):
+                td
+                    input#Director(type="text")
+            tr
+                td
+                    p(class="label") Writers(Enter Writers separated by comma):
+                td
+                    input#Writer(type="text")
+            tr
+                td
+                    p(class="label") Plot:
+                td
+                    input#Plot(type="text")
+            tr
+                td
+                    p(class="label") Poster(Add Poster URL):
+                td
+                    input#Poster(type="text")
+            tr
+                td
+                    p(class="label") Rated:
+                td
+                    input#Rated(type="text")
+            tr
+                td
+                    p(class="label") Released Date:
+                td  
+                    input#Released(type="text")
+            tr
+                td
+                    p(class="label") Awards:
+                td
+                    input#Awards(type="text")
+        p#messageNotification
+        button#addMovieButton(class="b1" type="button") Add Movie
+    script(src="/client.js")
+    link(href="/index.css" rel="stylesheet" )
