@@ -140,11 +140,6 @@ app.get("/logout",(req, res, next)=>{
 	res.end()
 });
 
-let movieData = require("./movie-data-2500.json");
-let movies = {}; //Stores all of the movies, key=id
-movieData.forEach(movie => {
-	movies[movie.Title] = movie;
-});
 
 
 const fs = require("fs");
